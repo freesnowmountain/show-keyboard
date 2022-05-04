@@ -1,0 +1,41 @@
+# show-keyboard
+亮键小组项目
+void moshixuanze()
+{
+	IMAGE img;
+	initgraph(449, 600);
+	loadimage(&img, "moshi.jpg", 449,600);//读取图片
+	putimage(0, 0, &img);
+	while (1)
+	{
+		if (MouseHit())//开始选择
+		{
+			MOUSEMSG msg;
+			msg = GetMouseMsg();
+			switch (msg.uMsg)
+			{
+			case WM_LBUTTONDOWN:
+				if (msg.mkLButton && msg.x > 138 && msg.x < 309 && msg.y>164 && msg.y < 164)
+				{
+					youxi();//游戏没统一命名
+				}
+				if (msg.mkLButton && msg.x > 138 && msg.x < 309 && msg.y>271 && msg.y < 328)
+				{
+					HWND ti = GetHWnd();
+					int  shi = MessageBox(ti, "抱歉，还在开发中", "提示", MB_OKCANCEL);
+				}
+
+				if (msg.mkLButton && msg.x > 138 && msg.x < 309 && msg.y>376 && msg.y < 437)
+				{
+					HWND ti = GetHWnd();
+					int  shi = MessageBox(ti, "抱歉，还在开发中", "提示", MB_OKCANCEL);
+
+				}
+				if (msg.mkLButton && msg.x > 138 && msg.x < 309 && msg.y>481 && msg.y < 543)
+				{
+					chushi();
+
+				}
+			}
+		}
+}
