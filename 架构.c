@@ -73,6 +73,27 @@ void shuoming() {
 	输出：给一段文字介绍：第一名角色wasd控制方向，空格放炸弹，触碰到道具则捡到
 	第二名角色方向键控制角色，回车键放炸弹，模式介绍，道具功能
 	*/
+	IMAGE picture3;
+	initgraph(800, 600);
+	loadimage(&picture3, L"游戏说明.jpg", 800, 600);
+	putimage(0, 0, &picture3);
+	outtextxy(int x, int y, text);
+	MOUSEMSG m;
+	while (1)
+	{
+		m = GetMouseMsg();
+		if (m.uMsg == WM_LBUTTONDOWN)
+		{
+			
+			if (m.x > 280 && m.y < 540 && m.x < 510 && m.y>445)
+			{
+				chushi();
+			}
+
+		}
+	}
+	_getch();
+
 }
 void tuichu() {
 	//退出游戏
