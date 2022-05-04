@@ -1,8 +1,43 @@
 void jieshu() {
-	/*
-	¹¦ÄÜ£º´òÓ¡½áÊø½çÃæ£¬½ÓÊÜ±¬Õ¨ÅÐ¶Ï·µ»ØÖµ£¬0£¬ÎÞÊÂ·¢Éú£¬1£¬½ÇÉ«1Ê¤Àû£¬2½ÇÉ«2Ê¤Àû
-	3£¬Æ½¾Ö¡£Ê¤ÀûÕß¼Ó200£¬°ÜÕß¼Ó100¡£¿ÉÒÔ·µ»ØÄ£Ê½Ñ¡Ôñ½çÃæ»ò·µ»Ø³õÊ¼½çÃæ¡£
-	 ±äÁ¿£º»õ±Òmoney¡£
+
+	IMAGE img2;
+	initgraph(449, 434);
+	loadimage(&img2, "jieshu.jpg",449 ,434);//å›¾ç‰‡
+	putimage(0, 0, &img2);
+
 	
-	*/
+	settextcolor(RGB(20, 93, 137));
+	settextstyle(40, 30, "");
+	char a[40];
+	sprintf(a, "%d", money1);
+	outtextxy(220,105 , a);
+	char b[40];
+	sprintf(b, "%d",  money2);
+	outtextxy(220,210 , b);//æ‰“å°å‡ºä¸¤ä¸ªè§’è‰²çš„é‡‘å¸
+	while (1)
+	{
+		if (MouseHit())//å¼€å§‹é€‰æ‹©
+		{
+			MOUSEMSG msg2;
+			msg2 = GetMouseMsg();
+			switch (msg2.uMsg)
+			{
+			case WM_LBUTTONDOWN:
+				if (msg2.mkLButton && msg2.x > 120 && msg2.x < 331 && msg2.y>304 && msg2.y < 367)
+				{
+					chushijiemian();//è¿”å›žä¸»é¡µé¢
+				}
+				if (msg.mkLButton && msg.x > 377&& msg.x < 418 && msg.y>16 && msg.y < 68)
+				{
+
+					youxi();//æ¸¸æˆæ²¡ç»Ÿä¸€å‘½åï¼Œé‡æ–°è¿›è¡Œä¸€æ¬¡æ¸¸æˆ
+
+				}
+
+
+			}
+		}
+
+	}
+
 }
